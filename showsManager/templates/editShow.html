@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Edit a Show</h2>
+    <form action="setEdit" method="post">
+        {% csrf_token %}
+        <label for="Title">Title</label>
+        <input type="text" name="Title" id="Title" placeholder="{{show.title}}">
+        <div>
+            <label for="Network">Network</label>
+            <input type="text" name="Network" id="Network" placeholder="{{show.network}}">
+            <label for="releaseDate">Release Date</label>
+            <input type="date" name="releaseDate" id="releaseDate" placeholder="{{show.releasedDate}}">
+        </div>
+        <label for="Discription">Discription</label>
+        <textarea name="Discription" id="Discription" cols="30" rows="10">{{show.discription}}</textarea>
+        <input type="submit" value="submit">
+    </form>
+    <a action=""> Go To Show</a>
+</body>
+</html>
