@@ -6,7 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Edit a Show</h2>
+    <div>
+        <a href="/shows">Go Back</a>
+        <h2>Edit a Show</h2>
+    </div>
+    
     <form action="setEdit" method="post">
         {% csrf_token %}
         <label for="Title">Title</label>
