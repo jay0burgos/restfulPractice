@@ -44,3 +44,8 @@ def setEdit(request, showId):
     show.save()
 
     return redirect('/shows/' + str(show.id))
+
+def delete(request, showId):
+    show = shows.objects.get(id = showId)
+    show.delete()
+    return redirect('/shows')
