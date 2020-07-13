@@ -10,6 +10,11 @@
         <a href="/shows">Go Back</a>
         <h2>Edit a Show</h2>
     </div>
+    <ul class="errorMessages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
     
     <form action="setEdit" method="post">
         {% csrf_token %}

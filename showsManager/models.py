@@ -4,7 +4,7 @@ from django.db import models
 class showValidator(models.Manager):
     def validator(self, post_data):
         errors = {}
-
+        #remember to have this match all your post requests
         if len(post_data['title']) < 2:
             errors['title'] = "Title needs to be longer"
         if len(post_data['network']) < 2:

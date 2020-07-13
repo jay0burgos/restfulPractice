@@ -43,6 +43,13 @@ def editShow(request, showId):
 
 #set edits
 def setEdit(request, showId):
+
+    errors = shows.objects.validator(request.POST)
+    if len(errors) > 0:
+        for k, v in errors.items():
+            messages.error(request, v)
+        return redirect('/shows/'+showId+'/edit')
+
     show = shows.objects.get(id = showId)
 
     show.title = request.POST['Title']
